@@ -5,7 +5,7 @@ from datetime import datetime
 class Tools:
     def __init__(self):
         self.registry = {
-            "get_wheather": self.get_weather,
+            "get_weather": self.get_weather,
             "add_numbers": self.add_numbers,
             "get_current_time": self.get_current_time,
             "reverse_text": self.reverse_text,
@@ -98,14 +98,14 @@ class Tools:
     def get_schemas(self):
         return self.schemas
     
-    def handle_tool(self, tool_name, tool_arg):
+    def handle_tool(self, tool_name, tool_args):
         if tool_name not in self.registry:
-            raise ValueError(f"Unknnown tool: {tool_name}")
+            raise ValueError(f"Unknown tool: {tool_name}")
         
-        if isinstance(tool_arg, str):
-            args = json.loads(tool_arg)
+        if isinstance(tool_args, str):
+            args = json.loads(tool_args)
         else:
-            args = tool_arg
+            args = tool_args
         
         result = self.registry[tool_name](**args)
         return json.dumps(result)

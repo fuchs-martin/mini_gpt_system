@@ -7,13 +7,13 @@ class Logger:
         self.log_dir = log_dir
         os.makedirs(self.log_dir, exist_ok=True)
 
-    def save(self, message, tokens, config, token_prices):
+    def save(self, messages, tokens, config, token_prices):
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         filename = f"{timestamp}.json"
         full_path = os.path.join(self.log_dir, filename)
 
         data = {
-            "messages": message,
+            "messages": messages,
             "tokens": tokens,
             "config": {
                 "model": config.model,
@@ -26,4 +26,4 @@ class Logger:
         }
 
         with open(full_path, "w", encoding="utf-8") as f:
-            json.dumps(data, f, indent=4, ensure_ascii=False)
+            json.dump(data, f, indent=4, ensure_ascii=False)

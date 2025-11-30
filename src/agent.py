@@ -1,17 +1,13 @@
 import json
-from src.client import Client
-from src.message_store import MessageStore
-from src.tools import Tools
-from src.tokens import Tokens
 
 class Agent:
-    def __init__(self):
-        self.client = Client()
-        self.store = MessageStore()
-        self.tools = Tools()
-        self.tokens = Tokens()
+    def __init__(self, client, store, tools, tokens):
+        self.client = client
+        self.store = store
+        self.tools = tools
+        self.tokens = tokens
     
-    def proces(self, user_input):
+    def process(self, user_input):
         self.store.add("user", user_input)
 
         try:
@@ -49,7 +45,7 @@ class Agent:
             "tool_calls": [
                 {
                     "id": call.id,
-                    "type": "functoion",
+                    "type": "function",
                     "function": {
                         "name": tool_name,
                         "arguments": tool_args
@@ -66,7 +62,7 @@ class Agent:
                 messages=self.store.get_all_messages()
             )
         except Exception as e:
-            error_msg = {f"Error after tool execution: {str(e)}"}
+            error_msg = f"Error after tool execution: {str(e)}"
             self.store.add("assistant", error_msg)
             return error_msg
         

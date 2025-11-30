@@ -33,7 +33,7 @@ def main():
             )
             break
 
-        answer = agent.proces(user_input)
+        answer = agent.process(user_input)
         print("Assistant: ", answer)
 
 if __name__ == "__main__":
