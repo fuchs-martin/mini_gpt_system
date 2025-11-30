@@ -63,8 +63,8 @@ The file includes:
 
 ## Demo (CLI Example)
 
-MINI GPT SYSTEM
-`----------------`
+MINI GPT SYSTEM  
+`----------------`  
 You: write hello  
 Assistant:  Hello! How can I assist you today?
 
@@ -101,7 +101,8 @@ pip install -r requirements.txt
 ```
 ### 3. Configure environment variables
 Create .env:  
-OPENAI_API_KEY=sk-xxxxxxx  
+OPENAI_API_KEY=sk-xxxxxxx 
+ 
 **Usage**  
 Run the system via module mode:
 ```
