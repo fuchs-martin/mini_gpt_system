@@ -4,6 +4,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/Status-Active-success.svg)
 ![OpenAI](https://img.shields.io/badge/OpenAI-API-lightgrey.svg)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)
 
 A modular, function-calling driven chatbot backend built with the OpenAI API.  
 This project demonstrates clean architecture design, LLM orchestration, conversational memory, tool execution, and token accounting within a CLI-based chatbot.
