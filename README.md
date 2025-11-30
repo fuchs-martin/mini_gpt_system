@@ -28,14 +28,14 @@ Structured exactly as required by OpenAI’s Chat Completion API.
 ### Modular Architecture
 The project is structured as a clean Python package:
 
-src/
-├── agent.py # LLM orchestration (core logic)
-├── client.py # OpenAI API wrapper
-├── config.py # environment & model configuration
-├── logger.py # logging conversations to JSON
-├── main.py # CLI entry point
-├── message_store.py # conversation state
-├── tokens.py # token & cost tracking
+src/  
+├── agent.py # LLM orchestration (core logic)  
+├── client.py # OpenAI API wrapper  
+├── config.py # environment & model configuration  
+├── logger.py # logging conversations to JSON  
+├── main.py # CLI entry point  
+├── message_store.py # conversation state  
+├── tokens.py # token & cost tracking  
 └── tools.py # function-calling registry
 
 ### Token Tracking & Cost Calculation
@@ -51,7 +51,7 @@ Displayed automatically upon exit/quit.
 ### Conversation Logging
 Each session is saved to:
 
-logs/conversations/<timestamp>.json
+logs/conversations/`<timestamp>`.json
 
 The file includes:
 - full message history  
@@ -64,25 +64,25 @@ The file includes:
 ## Demo (CLI Example)
 
 MINI GPT SYSTEM
-----------------
-You: write hello
+`----------------`
+You: write hello  
 Assistant:  Hello! How can I assist you today?
 
-You: What's the weather in Paris?
+You: What's the weather in Paris?  
 Assistant:  The current weather in Paris is 15°C with rainy conditions.
 
-You: reverse apple
+You: reverse apple  
 Assistant:  The reverse of "apple" is "elppa".
 
 You: quit
 
-==== SESSION TOKEN SUMMARY ====
-Total input tokens: 788
-Total output tokens: 62
-Total tokens: 850
------------------------------------
-Total session cost: 0.000155$
-=================================
+==== SESSION TOKEN SUMMARY ====  
+Total input tokens: 788  
+Total output tokens: 62  
+Total tokens: 850  
+`-----------------------------------`  
+Total session cost: 0.000155$  
+`=================================`
 
 ---
 
@@ -100,32 +100,32 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### 3. Configure environment variables
-Create .env:
-OPENAI_API_KEY=sk-xxxxxxx
-**Usage**
+Create .env:  
+OPENAI_API_KEY=sk-xxxxxxx  
+**Usage**  
 Run the system via module mode:
 ```
 python3 -m src.main
 ```
-**Architecture Overview**
+**Architecture Overview**  
 flowchart TD
 
-A[User Input] --> B[MessageStore]
-B --> C[Agent]
-C --> D[OpenAI Client]
-D --> E[Model Response]
+A[User Input] --> B[MessageStore]  
+B --> C[Agent]  
+C --> D[OpenAI Client]  
+D --> E[Model Response]  
 
-E --> |Tool Call| F[Tools Registry]
-F --> G[Execute Python Function]
-G --> H[Result to Model]
+E --> |Tool Call| F[Tools Registry]  
+F --> G[Execute Python Function]  
+G --> H[Result to Model]  
 H --> C
 
-E --> |Normal Response| I[Assistant Message]
+E --> |Normal Response| I[Assistant Message]  
 I --> B
 
-License
+**License**  
 This project is licensed under the MIT License, allowing free use, modification, and distribution while preserving attribution.
 
-Author
-Developed by Martin Fuchs
+**Author**  
+Developed by Martin Fuchs  
 Python & AI Engineering
