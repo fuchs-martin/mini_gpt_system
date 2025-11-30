@@ -1,4 +1,10 @@
 # Mini ChatGPT System  
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Active-success.svg)
+![OpenAI](https://img.shields.io/badge/OpenAI-API-lightgrey.svg)
+
 A modular, function-calling driven chatbot backend built with the OpenAI API.  
 This project demonstrates clean architecture design, LLM orchestration, conversational memory, tool execution, and token accounting within a CLI-based chatbot.
 
@@ -102,7 +108,7 @@ pip install -r requirements.txt
 ### 3. Configure environment variables
 Create .env:  
 OPENAI_API_KEY=sk-xxxxxxx 
- 
+
 **Usage**  
 Run the system via module mode:
 ```
