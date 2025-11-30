@@ -38,7 +38,7 @@ class Tokens:
         print(f"Total output tokens: {totals['completion_tokens']}")
         print(f"Total tokens: {totals['total_tokens']}")
         print("-----------------------------------")
-        print(f"Total session cost: {totals['total_cost']:.6f}")
+        print(f"Total session cost: {totals['total_cost']:.6f}$")
         print("=================================\n")
     
     def to_dict(self):
