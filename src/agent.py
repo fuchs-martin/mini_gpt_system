@@ -1,8 +1,8 @@
 import json
-from client import Client
-from message_store import MessageStore
-from tools import Tools
-from tokens import Tokens
+from src.client import Client
+from src.message_store import MessageStore
+from src.tools import Tools
+from src.tokens import Tokens
 
 class Agent:
     def __init__(self):

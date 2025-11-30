@@ -1,10 +1,10 @@
-from config import Config
-from message_store import MessageStore
-from tools import Tools
-from client import Client
-from tokens import Tokens
-from agent import Agent
-from logger import Logger
+from src.config import Config
+from src.message_store import MessageStore
+from src.tools import Tools
+from src.client import Client
+from src.tokens import Tokens
+from src.agent import Agent
+from src.logger import Logger
 
 def main():
     config = Config()
